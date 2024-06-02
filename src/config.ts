@@ -20,6 +20,10 @@ const {
   YNAB_TOKEN = "",
   YNAB_BUDGET_ID = "",
   YNAB_ACCOUNTS = "",
+  BUXFER_USER_NAME = "",
+  BUXFER_PASSWORD = "",
+  BUXFER_ACCOUNTS = "",
+  TRANSACTION_HASH_TYPE = "",
 } = process.env;
 
 /**
@@ -41,6 +45,10 @@ export {
   YNAB_TOKEN,
   YNAB_BUDGET_ID,
   YNAB_ACCOUNTS,
+  BUXFER_USER_NAME,
+  BUXFER_PASSWORD,
+  BUXFER_ACCOUNTS,
+  TRANSACTION_HASH_TYPE,
 };
 export const systemName = "moneyman";
 export const currentDate = format(Date.now(), "yyyy-MM-dd");
@@ -51,20 +59,6 @@ export const accounts = parseAccounts(ACCOUNTS_JSON).filter(
     accountsToScrape.length == 0 ||
     accountsToScrape.includes(account.companyId),
 );
-
-export const FileHeaders = [
-  "date",
-  "amount",
-  "description",
-  "memo",
-  "category",
-  "account",
-  "hash",
-  "comment",
-  "scraped at",
-  "scraped by",
-  "identifier",
-];
 
 function parseAccounts(accountsJson?: string): Array<AccountConfig> {
   try {
