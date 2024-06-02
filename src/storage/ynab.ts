@@ -95,6 +95,7 @@ export class YNABStorage implements TransactionStorage {
       if (TRANSACTION_HASH_TYPE !== "moneyman") {
         sendDeprecationMessage("hashFiledChange");
       }
+
     }
 
     if (missingAccounts.size > 0) {
