@@ -9,7 +9,7 @@
   },
   "scripts": {
     "act": "go run github.com/nektos/act@latest",
-    "start": "tsc && node dst/index.js",
+    "start": "node dst/index.js",
     "start:container": "docker compose up",
     "postinstall": "patch-package",
     "build": "tsc",
